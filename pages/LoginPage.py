@@ -8,6 +8,7 @@ class LoginPage:
     email_address_field_id = "input-email"
     password_field_id = "input-password"
     login_button_xpath = "//input[@value='Login']"
+    warning_message_xpath = "//div[@class='alert alert-danger alert-dismissible']"
 
     def enter_email_address(self, email_address_txt):
         self.driver.find_element(By.ID, self.email_address_field_id).click()
@@ -21,3 +22,6 @@ class LoginPage:
 
     def click_login_button(self):
         self.driver.find_element(By.XPATH, self.login_button_xpath).click()
+
+    def retrieve_warning_message(self):
+        return self.driver.find_element(By.XPATH, self.warning_message_xpath).text

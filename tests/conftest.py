@@ -28,6 +28,7 @@ def setup_and_teardown(request):
     driver.get(app_url)
     request.cls.driver = driver
     yield
+    time.sleep(3)
     driver.quit()
 
 
@@ -50,6 +51,6 @@ def setup_and_teardown_2(request):
     app_url = ReadConfigurations.read_configuration("basic info", "url_2")
     driver.get(app_url)
     request.cls.driver = driver
-    time.sleep(3)
     yield
+    time.sleep(3)
     driver.quit()
