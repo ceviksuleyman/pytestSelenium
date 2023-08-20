@@ -6,6 +6,7 @@ from pages.BasePage import BasePage
 class RegisterPage(BasePage):
 
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
 
     first_name_field_id = "input-firstname"
@@ -19,59 +20,32 @@ class RegisterPage(BasePage):
     continue_button_xpath = "//input[@value='Continue']"
 
     def enter_first_name(self, txt_firstname):
-
-        self.type_into_element(txt_firstname, "_id", self.first_name_field_id)
-        # self.driver.find_element(By.ID, self.first_name_field_id).click()
-        # self.driver.find_element(By.ID, self.first_name_field_id).clear()
-        # self.driver.find_element(By.ID, self.first_name_field_id).send_keys(txt_firstname)
+        self.type_into_element(txt_firstname, "first_name_field_id", self.first_name_field_id)
 
     def enter_last_name(self, txt_lastname):
-
-        self.type_into_element(txt_lastname, "_id", self.last_name_field_id)
-        # self.driver.find_element(By.ID, self.last_name_field_id).click()
-        # self.driver.find_element(By.ID, self.last_name_field_id).clear()
-        # self.driver.find_element(By.ID, self.last_name_field_id).send_keys(txt_lastname)
+        self.type_into_element(txt_lastname, "last_name_field_id", self.last_name_field_id)
 
     def enter_email(self, email_txt):
-
-        self.type_into_element(email_txt, "_id", self.email_field_id)
-        # self.driver.find_element(By.ID, self.email_field_id).click()
-        # self.driver.find_element(By.ID, self.email_field_id).clear()
-        # self.driver.find_element(By.ID, self.email_field_id).send_keys(email_txt)
+        self.type_into_element(email_txt, "email_field_id", self.email_field_id)
 
     def enter_telephone(self, telephone_txt):
-
-        self.type_into_element(telephone_txt, "_id", self.telephone_field_id)
-        # self.driver.find_element(By.ID, self.telephone_field_id).click()
-        # self.driver.find_element(By.ID, self.telephone_field_id).clear()
-        # self.driver.find_element(By.ID, self.telephone_field_id).send_keys(telephone_txt)
+        self.type_into_element(telephone_txt, "telephone_field_id", self.telephone_field_id)
 
     def enter_password(self, password_txt):
-
-        self.type_into_element(password_txt, "_id", self.password_field_id)
-        # self.driver.find_element(By.ID, self.password_field_id).click()
-        # self.driver.find_element(By.ID, self.password_field_id).clear()
-        # self.driver.find_element(By.ID, self.password_field_id).send_keys(password_txt)
+        self.type_into_element(password_txt, "password_field_id", self.password_field_id)
 
     def enter_password_confirm(self, password_txt_confirm):
-
-        self.type_into_element(password_txt_confirm, "_id", self.confirm_pwd_field_id)
-        # self.driver.find_element(By.ID, self.confirm_pwd_field_id).click()
-        # self.driver.find_element(By.ID, self.confirm_pwd_field_id).clear()
-        # self.driver.find_element(By.ID, self.confirm_pwd_field_id).send_keys(password_txt_confirm)
+        self.type_into_element(password_txt_confirm, "confirm_pwd_field_id", self.confirm_pwd_field_id)
 
     def select_yes_radio_button(self):
-
-        self.element_click("_xpath", self.yes_radio_button_xpath)
+        self.element_click("yes_radio_button_xpath", self.yes_radio_button_xpath)
         # self.driver.find_element(By.XPATH, self.yes_radio_button_xpath).click()
 
     def select_agree_checkbox_field(self):
-
         self.element_click("_xpath", self.agree_field_xpath)
         # self.driver.find_element(By.XPATH, self.agree_field_xpath).click()
 
     def click_on_continue_button(self):
-
         self.element_click("_xpath", self.continue_button_xpath)
         # self.driver.find_element(By.XPATH, self.continue_button_xpath).click()
 

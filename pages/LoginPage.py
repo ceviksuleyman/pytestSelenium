@@ -25,3 +25,8 @@ class LoginPage:
 
     def retrieve_warning_message(self):
         return self.driver.find_element(By.XPATH, self.warning_message_xpath).text
+
+    def login_to_application(self, email_address_text, password_text):
+        self.enter_email_address(email_address_text)
+        self.enter_password(password_text)
+        return self.click_login_button()

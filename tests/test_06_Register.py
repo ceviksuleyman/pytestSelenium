@@ -1,19 +1,17 @@
 from datetime import datetime
 
-import pytest
-
 from pages.AccountSuccessPage import AccountSuccessPage
 from pages.HomePage import HomePage
 from pages.RegisterPage import RegisterPage
+from tests.BaseTest import BaseTest
 
 
 def generate_email_with_time_stamp():
     time_stamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    return "cevik" + time_stamp + "@gmail.com"
+    return "Cevik" + time_stamp + "@gmail.com"
 
 
-@pytest.mark.usefixtures("setup_and_teardown_2")
-class TestRegister:
+class TestRegister(BaseTest):
 
     def test_register_with_mandatory_fields(self):
         home_page = HomePage(self.driver)
@@ -25,8 +23,8 @@ class TestRegister:
         register_page.enter_last_name("Pytest")
         register_page.enter_email(generate_email_with_time_stamp())
         register_page.enter_telephone("08545456666")
-        register_page.enter_password("123456789")
-        register_page.enter_password_confirm("123456789")
+        register_page.enter_password("Qwerty01!")
+        register_page.enter_password_confirm("Qwerty01!")
         register_page.select_agree_checkbox_field()
         register_page.click_on_continue_button()
 
