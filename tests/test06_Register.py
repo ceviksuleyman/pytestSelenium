@@ -21,19 +21,19 @@ class TestRegister:
         home_page.click_register_option()
 
         register_page = RegisterPage(self.driver)
-        # register_page.enter_first_name("Smith")
-        # register_page.enter_last_name("Pytest")
-        # register_page.enter_email(generate_email_with_time_stamp())
-        # register_page.enter_telephone("08545456666")
-        # register_page.enter_password("123456789")
-        # register_page.enter_password_confirm("123456789")
-        # register_page.select_agree_checkbox_field()
-        # register_page.click_on_continue_button()
+        register_page.enter_first_name("Smith")
+        register_page.enter_last_name("Pytest")
+        register_page.enter_email(generate_email_with_time_stamp())
+        register_page.enter_telephone("08545456666")
+        register_page.enter_password("123456789")
+        register_page.enter_password_confirm("123456789")
+        register_page.select_agree_checkbox_field()
+        register_page.click_on_continue_button()
 
-        register_page.register_account("Smith", "Pytest",
-                                       generate_email_with_time_stamp(), "08545456666",
-                                       "123456", "123456",
-                                       "No", "select")
+        # register_page.register_account("Smith", "Pytest",
+        #                                generate_email_with_time_stamp(), "08545456666",
+        #                                "123456", "123456",
+        #                                "No", "select")
 
         expected_txt = 'Your Account Has Been Created!'
         account_success_page = AccountSuccessPage(self.driver)
